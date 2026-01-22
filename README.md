@@ -2,6 +2,8 @@
 
 A CLI tool for processing PTA reimbursement request emails. Extracts data from scanned forms using OCR, allows review/editing, appends records to Google Sheets, and archives attachments to Google Drive.
 
+While this is a useful tool for me specifically (and you could probably adapt it to your own needs), this was mostly a test of Claude Code's capabilities. This was made with *zero* coding help from me (and thus shouldn't be taken as evidence of my coding skills, or lack thereof!) Aside from some familiarity with cloud services and being able to ask the right sorts of prompts, this could have been created by a user with no software development experience.
+
 ## Features
 
 - **Email Processing**: Fetch emails directly from Gmail or process local `.eml` files

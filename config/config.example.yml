@@ -1,0 +1,72 @@
+# PTA Reimbursement Parser Configuration
+# Copy this file to config.yaml and fill in your values
+
+# Path to Poppler bin directory (for PDF to image conversion)
+# On Windows with Chocolatey: typically C:\ProgramData\chocolatey\bin
+# Manual install example: C:\Program Files\poppler-24.08.0\Library\bin
+# Leave empty or remove to use system PATH
+poppler_path: ""
+
+google_cloud:
+  # Path to your Google Cloud service account JSON key file
+  # The service account needs:
+  #   - Cloud Vision API enabled
+  #   - Google Sheets API enabled
+  credentials_file: "credentials/google-cloud-service-account.json"
+
+# Gmail API settings (for fetching emails directly)
+gmail:
+  # Path to OAuth2 client credentials JSON
+  # Create in Google Cloud Console: APIs & Services > Credentials > Create Credentials > OAuth client ID
+  # Select "Desktop app" as application type
+  oauth_credentials_file: "credentials/gmail_oauth_credentials.json"
+
+# Google Drive settings (for archiving attachments)
+google_drive:
+  # Folder ID of the archive folder (e.g., "2025-2026 ARCHIVE")
+  # Get the ID from the folder URL: https://drive.google.com/drive/folders/FOLDER_ID
+  # The folder should contain monthly subfolders (e.g., "January 2026", "February 2026")
+  # Files will be renamed to: "<ID> <LastName> <Type> <#>.pdf"
+  archive_folder_id: "your-folder-id-here"
+
+google_sheets:
+  # The spreadsheet ID from the Google Sheets URL
+  # Example: https://docs.google.com/spreadsheets/d/SPREADSHEET_ID/edit
+  spreadsheet_id: "your-spreadsheet-id-here"
+
+  # Name of the sheet/tab to write to
+  sheet_name: "Income and Expenses"
+
+# Field mappings for dropdown selections
+field_mappings:
+  # Payment types (determines TODO in notes)
+  # Check -> "TODO: WRITE CHECK"
+  # Amazon/Debit -> "TODO: ORDER ON AMAZON"
+  payment_types:
+    - "Check"
+    - "Debit"
+    - "Amazon"
+
+  # Budget categories for reimbursements
+  budget_categories:
+    - "Administrative Expenses"
+    - "Classroom Events"
+    - "Teacher Appreciation"
+    - "School Supplies"
+    - "Field Trips"
+    - "Fundraising"
+    - "Community Events"
+    - "Other"
+
+  # Budget items (more specific than categories)
+  budget_items:
+    - "Home Room Parent Reimbursement"
+    - "Winter Party"
+    - "Fall Party"
+    - "Spring Party"
+    - "Valentine's Day Party"
+    - "End of Year Party"
+    - "Teacher Appreciation Week"
+    - "Classroom Supplies"
+    - "Field Day"
+    - "Other"
